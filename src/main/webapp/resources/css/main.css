@@ -1,0 +1,70 @@
+body, html {
+    height: 100%;
+}
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.card {
+    padding: 20px 25px 30px;
+    margin: 50px auto 25px;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputFirstName,
+.form-signin #inputLastName,
+.form-signin #inputRepeatedPassword,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn.btn-signin {
+    background-color: rgb(104, 145, 162);
+    padding: 0;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    margin-bottom: 10px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password, .register {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+    display: table-cell;
+}
