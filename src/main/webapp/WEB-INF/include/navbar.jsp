@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:url value="/books" var="booksUrl"/>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -34,7 +37,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="">New...</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="">Show all</a></li>
+                        <li><a href="${booksUrl}">Show all</a></li>
                     </ul>
                 </li>
                 <li><a href="">My rents</a></li>

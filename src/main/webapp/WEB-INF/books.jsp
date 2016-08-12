@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="/WEB-INF/include/header.jsp"%>
+<%@include file="/WEB-INF/include/navbar.jsp"%>
 
 <div class="container">
 
@@ -23,19 +25,20 @@
                 </thead>
 
                 <tbody>
+                <c:forEach var="book" items="${bookList}">
                 <tr>
-                    <td class="text-center col-md-1">Id</td>
-                    <td class="text-center">Title</td>
-                    <td class="text-center">Author</td>
-                    <td class="text-center col-md-1">Available</td>
+                    <td class="text-center col-md-1">${book.id}</td>
+                    <td class="text-center">${book.title}</td>
+                    <td class="text-center">${book.author}</td>
+                    <td class="text-center col-md-1">${book.available}</td>
                     <td class="text-center"><a href="" class="btn btn-sm btn-success">xx</a></td>
                     <td class="text-center"><a href="" class="btn btn-sm btn-primary">xx</a></td>
                     <td class="text-center">
                         <a href="" class="btn btn-sm btn-danger delete-button">XX</a>
                     </td>
                 </tr>
+                </c:forEach>
                 </tbody>
-
             </table>
 
         </div>
