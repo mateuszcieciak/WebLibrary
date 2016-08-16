@@ -28,7 +28,7 @@ public class HibernateConfig {
     @Autowired
     private Environment environment;
 
-    // Zarowno DataSource jak i EntityManagerFactory wykorzystuja plik hibernate.properties
+    // 1. DataSource
 
     @Bean
     public DataSource dataSource() {
@@ -41,21 +41,20 @@ public class HibernateConfig {
         return dataSource;
     }
 
-    // Konfiguracja EntityManagerFactory
+    // 2. EntityManagerFactory
+
     @Bean
     public EntityManagerFactory entityManagerFactory() {
+
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 
         Properties properties = new Properties();
         properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
         properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql", environment.getProperty("hibernate.format_sql"));
-        properties.put("hibernate.generate_statistics", environment.getProperty("hibernate" +
-                ".generate_statistics"));
-
+        properties.put("hibernate.generate_statistics", environment.getProperty("hibernate.generate_statistics"));
 
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-        // Bedzie skanowal pakiety w poszukiwaniu Entity
         factoryBean.setPackagesToScan("com.mcieciak.model");
         factoryBean.setJpaVendorAdapter(vendorAdapter);
         factoryBean.setJpaProperties(properties);
@@ -65,13 +64,12 @@ public class HibernateConfig {
         return factoryBean.getObject();
     }
 
-    // Wsparcie transakcji w Springu
+    // 3. PlatformTransactionManager
     @Bean
     public PlatformTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory());
         return transactionManager;
     }
-
 
 }
