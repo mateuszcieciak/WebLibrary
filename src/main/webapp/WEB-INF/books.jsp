@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/include/header.jsp"%>
 <%@include file="/WEB-INF/include/navbar.jsp"%>
 
-<div class="container">
+<div class="container text-center">
 
     <h1>List of Books</h1>
 

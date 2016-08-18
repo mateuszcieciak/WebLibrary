@@ -13,12 +13,13 @@
         <spring.version>4.3.1.RELEASE</spring.version>
         <spring.security.version>4.1.0.RELEASE</spring.security.version>
         <spring.data.version>1.10.2.RELEASE</spring.data.version>
-        <hibernate.version>5.2.1.Final</hibernate.version>
+        <hibernate.version>5.1.0.Final</hibernate.version>
         <hibernate.validator.version>5.2.4.Final</hibernate.validator.version>
         <java.servlet.version>3.1.0</java.servlet.version>
         <jstl.version>1.2</jstl.version>
         <slf4j.version>1.7.7</slf4j.version>
         <mysql.connector.version>5.1.38</mysql.connector.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
@@ -100,10 +101,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.connector.version}</version>
         </dependency>
+        <!-- Faster XML -->
         <dependency>
-            <groupId>de.vandermeer</groupId>
-            <artifactId>asciitable</artifactId>
-            <version>0.2.5</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.3</version>
         </dependency>
     </dependencies>
 
