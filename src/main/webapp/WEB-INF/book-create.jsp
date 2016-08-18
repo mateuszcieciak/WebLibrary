@@ -11,25 +11,26 @@
 
     <div class="row">
         <form action="${createBookUrl}" method="post" role="form" class="form-horizontal">
+            <input type="hidden" name="id" value="${book.id}"/>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="title">Title:</label>
                 <div class="col-sm-8">
-                    <input name ="title" type="text" id="title" class="form-control"
-                           placeholder="Enter book title"
-                           autofocus>
+                    <input value="${book.title}" name ="title" type="text" id="title"
+                           class="form-control" placeholder="Enter book title" autofocus>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="author">Author:</label>
                 <div class="col-sm-8">
-                    <input name ="author" type="text" id="author" class="form-control"
-                           placeholder="Enter book author" autofocus>
+                    <input value="${book.author}" name ="author" type="text" id="author"
+                           class="form-control" placeholder="Enter book author" autofocus>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="available">Available:</label>
                 <div class="col-sm-8">
-                    <input name ="available" type="number" id="available" class="form-control"
+                    <input value="${book.available}" name ="available" type="number" id="available"
+                           min="0" class="form-control"
                            placeholder="Enter number of available books" autofocus>
                 </div>
             </div>

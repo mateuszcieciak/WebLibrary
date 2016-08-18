@@ -3,6 +3,8 @@
 <%@include file="/WEB-INF/include/header.jsp"%>
 <%@include file="/WEB-INF/include/navbar.jsp"%>
 
+<c:url value="/book/edit" var="editBookUrl"/>
+
 <div class="container text-center">
 
     <h1>List of Books</h1>
@@ -31,10 +33,11 @@
                     <td class="text-center">${book.title}</td>
                     <td class="text-center">${book.author}</td>
                     <td class="text-center col-md-1">${book.available}</td>
-                    <td class="text-center"><a href="" class="btn btn-sm btn-success">xx</a></td>
-                    <td class="text-center"><a href="" class="btn btn-sm btn-primary">xx</a></td>
+                    <td class="text-center"><a href="" class="btn btn-sm btn-primary">Rent</a></td>
+                    <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm
+                    btn-success">Edit</a></td>
                     <td class="text-center">
-                        <a href="" class="btn btn-sm btn-danger delete-button">XX</a>
+                        <a href="" class="btn btn-sm btn-danger delete-button">Delete</a>
                     </td>
                 </tr>
                 </c:forEach>
