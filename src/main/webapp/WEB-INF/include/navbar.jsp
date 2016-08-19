@@ -4,6 +4,7 @@
 <c:url value="/books" var="booksUrl"/>
 <c:url value="/book/create" var="createBookUrl"/>
 <c:url value="/user/create" var="createUserUrl"/>
+<c:url value="/logout" var="logoutUrl"/>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -55,7 +56,7 @@
                         <li><a href="#">My account</a></li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="">Logout</a>
+                            <a href="${logoutUrl}">Logout</a>
                         </li>
                     </ul>
                 </li>
