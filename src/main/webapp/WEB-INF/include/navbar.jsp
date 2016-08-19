@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <c:url value="/books" var="booksUrl"/>
 <c:url value="/book/create" var="createBookUrl"/>
@@ -50,6 +51,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-haspopup="true" aria-expanded="false">
+                        <sec:authentication property="principal.username"></sec:authentication>
 
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
