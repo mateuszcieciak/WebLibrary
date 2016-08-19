@@ -18,7 +18,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @ComponentScan(basePackages = "com.mcieciak")
 @EnableWebMvc
-
 public class AppConfig extends WebMvcConfigurerAdapter{
 
     @Override

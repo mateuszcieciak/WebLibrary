@@ -3,6 +3,7 @@ package com.mcieciak.config;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.DispatcherType;
@@ -19,8 +20,8 @@ import java.util.EnumSet;
 
 public class ApplicationInitializer implements WebApplicationInitializer {
 
-    private static final EnumSet<DispatcherType> DISPATCHER_TYPES =
-            EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD);
+    private static final EnumSet<DispatcherType> DISPATCHER_TYPES = EnumSet.of(DispatcherType
+            .REQUEST, DispatcherType.FORWARD);
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -42,6 +43,11 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
         servletContext.addFilter("characterEncodingFilter", characterEncodingFilter)
+                .addMappingForUrlPatterns(null, true, "/*");
+
+        // Filtr do security
+        DelegatingFilterProxy delegatingFilterProxy=new DelegatingFilterProxy();
+        servletContext.addFilter("springSecurityFilterChain", delegatingFilterProxy)
                 .addMappingForUrlPatterns(null, true, "/*");
 
     }
