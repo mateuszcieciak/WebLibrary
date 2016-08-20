@@ -7,7 +7,7 @@
 <c:url value="/book/create" var="createBookUrl"/>
 
 <c:url value="/users" var="usersUrl"/>
-<c:url value="/user/create" var="createUserUrl"/>
+<c:url value="/register" var="registerUrl"/>
 <c:url value="/rents" var="myRentsUrl"/>
 
 <c:url value="/logout" var="logoutUrl"/>
@@ -33,7 +33,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">New...</a></li>
+                        <li><a href="${registerUrl}">New...</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="${usersUrl}">Show all</a></li>
                     </ul>
@@ -45,12 +45,16 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-haspopup="true" aria-expanded="false">Books <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <sec:authorize access="hasRole('ADMIN')">
                         <li><a href="${createBookUrl}">New...</a></li>
+                        </sec:authorize>
                         <li role="separator" class="divider"></li>
                         <li><a href="${booksUrl}">Show all</a></li>
                     </ul>
                 </li>
+                <sec:authorize access="hasRole('USER')">
                 <li><a href="${myRentsUrl}">My rents</a></li>
+                </sec:authorize>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

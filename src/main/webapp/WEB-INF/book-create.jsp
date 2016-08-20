@@ -4,6 +4,7 @@
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
 
 <c:url value="/book/save" var="createBookUrl"/>
+<c:url value="/books" var="booksUrl"/>
 
 <div class="container text-center" >
 
@@ -38,7 +39,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-8">
                     <button type="submit" class="btn btn-primary">Save</button>
-                    <a href="#" class="btn btn-danger">Cancel</a>
+                    <a href="${booksUrl}" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
         </form>

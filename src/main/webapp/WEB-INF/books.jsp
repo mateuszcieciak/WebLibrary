@@ -22,9 +22,13 @@
                     <th class="text-center">Title</th>
                     <th class="text-center">Author</th>
                     <th class="text-center col-md-1">Available</th>
+                    <sec:authorize access="hasRole('USER')">
                     <th class="text-center col-md-1">Action</th>
+                    </sec:authorize>
+                    <sec:authorize access="hasRole('ADMIN')">
                     <th class="text-center col-md-1">Edit</th>
                     <th class="text-center col-md-1">Delete</th>
+                    </sec:authorize>
                 </tr>
                 </thead>
 
@@ -35,9 +39,12 @@
                         <td class="text-center">${book.title}</td>
                         <td class="text-center">${book.author}</td>
                         <td class="text-center col-md-1">${book.available}</td>
+                        <sec:authorize access="hasRole('USER')">
                         <td class="text-center"><a href="${rentBookUrl}/${book.id}"
                                                    class="btn btn-sm btn-success">Rent</a>
                         </td>
+                        </sec:authorize>
+                        <sec:authorize access="hasRole('ADMIN')">
                         <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm
                     btn-primary">Edit</a></td>
                         <td class="text-center">
@@ -46,8 +53,9 @@
                                 <%--<input class="btn btn-sm btn-danger" type="submit" value="Delete">--%>
                             <%--</form>--%>
                             <a href="${deleteBookUrl}/${book.id}"
-                               class="btn btn-sm btn-danger delete-button delete-button">Delete</a>
+                               class="btn btn-sm btn-danger delete-button">Delete</a>
                         </td>
+                        </sec:authorize>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -59,16 +67,15 @@
 
 </div>
 <script>
-    $(document).ready(function () {
-        $('.delete-button').on('click', function (event) {
+    $(function() {
+        $('.delete-button').on('click', function(event) {
+            console.log(event);
             event.preventDefault();
             var url = event.target.href;
-            $.post(url, {
-                '${_csrf.parameterName}':'${_csrf.token}'
-            })
-                    .done(function(){
-                location.reload();
-            });
+            $.post(url)
+                    .done(function() {
+                        location.reload();
+                    });
         });
     });
 </script>
