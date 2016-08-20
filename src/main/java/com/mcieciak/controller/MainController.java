@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by Mateusz on 12.08.2016.
- */
-
 @Controller
 public class MainController {
 

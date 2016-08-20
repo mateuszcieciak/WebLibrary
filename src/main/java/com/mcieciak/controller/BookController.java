@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-/**
- * Created by Mateusz on 11.08.2016.
- */
 @Controller
 public class BookController {
 

@@ -9,10 +9,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-/**
- * Created by Mateusz on 12.08.2016.
- */
-
 // Klasa konfiguracyjna Springa
 
 @Configuration

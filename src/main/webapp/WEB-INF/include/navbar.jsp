@@ -5,6 +5,8 @@
 
 <c:url value="/books" var="booksUrl"/>
 <c:url value="/book/create" var="createBookUrl"/>
+
+<c:url value="/users" var="usersUrl"/>
 <c:url value="/user/create" var="createUserUrl"/>
 <c:url value="/logout" var="logoutUrl"/>
 
@@ -31,7 +33,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">New...</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="">Show all</a></li>
+                        <li><a href="${usersUrl}">Show all</a></li>
                     </ul>
                 </li>
                 </sec:authorize>

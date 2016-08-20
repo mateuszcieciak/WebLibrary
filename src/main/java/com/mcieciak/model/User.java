@@ -6,17 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-/**
- * Created by Mateusz on 12.08.2016.
- */
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public
-@Data
-class User extends BaseId {
+public @Data class User extends BaseId {
 
     // Ten enum jest stricte zwiazany z ta klasa, wiec nie tworze go w osobnej
     public enum Role {

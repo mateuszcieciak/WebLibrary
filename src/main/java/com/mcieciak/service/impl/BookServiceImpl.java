@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by Mateusz on 12.08.2016.
- */
 @Service
 public class BookServiceImpl implements BookService {
     @Autowired

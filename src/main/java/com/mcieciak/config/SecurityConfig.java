@@ -9,10 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-/**
- * Created by Mateusz on 19.08.2016.
- */
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -38,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/login").permitAll()
                     .antMatchers("/register").permitAll()
                     .antMatchers("/resources/**").permitAll()
+                    .antMatchers("/users", "/users/**", "/admin/**").hasRole("ADMIN")
                     .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()

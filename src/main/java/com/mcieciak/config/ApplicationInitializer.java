@@ -12,10 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 import java.util.EnumSet;
 
-/**
- * Created by Mateusz on 11.08.2016.
- */
-
 // Tworzenie DispatcherServlet
 
 public class ApplicationInitializer implements WebApplicationInitializer {

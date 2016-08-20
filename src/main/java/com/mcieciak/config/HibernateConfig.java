@@ -16,10 +16,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by Mateusz on 12.08.2016.
- */
-
 @Configuration
 @PropertySource(value={"classpath:hibernate.properties"})
 @EnableJpaRepositories(basePackages = "com.mcieciak.dao")

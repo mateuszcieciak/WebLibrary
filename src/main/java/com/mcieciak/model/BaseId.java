@@ -9,13 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-/**
- * Created by Mateusz on 12.08.2016.
- */
-
 @NoArgsConstructor
 @AllArgsConstructor
-
 @MappedSuperclass
 public @Data class BaseId {
 

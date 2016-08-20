@@ -6,10 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Mateusz on 11.08.2016.
- */
-
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
 
