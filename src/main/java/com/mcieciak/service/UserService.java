@@ -9,4 +9,6 @@ public interface UserService extends UserDetailsService{
     void save(User user);
 
     List<User> findAll();
+
+    User findByEmail(String email);
 }

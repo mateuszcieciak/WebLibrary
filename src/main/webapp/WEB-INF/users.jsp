@@ -17,7 +17,7 @@
                     <th class="text-center col-md-1">Id</th>
                     <th class="text-center">First name</th>
                     <th class="text-center">Last name</th>
-                    <th class="text-center col-md-1">Email</th>
+                    <th class="text-center">Email</th>
                 </tr>
                 </thead>
 
@@ -27,7 +27,7 @@
                         <td class="text-center col-md-1">${user.id}</td>
                         <td class="text-center">${user.firstName}</td>
                         <td class="text-center">${user.lastName}</td>
-                        <td class="text-center col-md-1">${user.email}</td>
+                        <td class="text-center">${user.email}</td>
                         </td>
                     </tr>
                 </c:forEach>

@@ -5,6 +5,7 @@
 
 <c:url value="/book/edit" var="editBookUrl"/>
 <c:url value="/book/delete" var="deleteBookUrl"/>
+<c:url value="/rent/book" var="rentBookUrl"/>
 
 <div class="container text-center">
 
@@ -34,7 +35,8 @@
                         <td class="text-center">${book.title}</td>
                         <td class="text-center">${book.author}</td>
                         <td class="text-center col-md-1">${book.available}</td>
-                        <td class="text-center"><a href="" class="btn btn-sm btn-success">Rent</a>
+                        <td class="text-center"><a href="${rentBookUrl}/${book.id}"
+                                                   class="btn btn-sm btn-success">Rent</a>
                         </td>
                         <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm
                     btn-primary">Edit</a></td>

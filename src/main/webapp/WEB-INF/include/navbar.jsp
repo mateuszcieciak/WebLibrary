@@ -8,6 +8,8 @@
 
 <c:url value="/users" var="usersUrl"/>
 <c:url value="/user/create" var="createUserUrl"/>
+<c:url value="/rents" var="myRentsUrl"/>
+
 <c:url value="/logout" var="logoutUrl"/>
 
 <nav class="navbar navbar-inverse">
@@ -48,7 +50,7 @@
                         <li><a href="${booksUrl}">Show all</a></li>
                     </ul>
                 </li>
-                <li><a href="">My rents</a></li>
+                <li><a href="${myRentsUrl}">My rents</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @MappedSuperclass
 public @Data class BaseId {
 
