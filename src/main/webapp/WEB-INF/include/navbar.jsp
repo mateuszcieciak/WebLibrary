@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+
 <c:url value="/books" var="booksUrl"/>
 <c:url value="/book/create" var="createBookUrl"/>
 <c:url value="/user/create" var="createUserUrl"/>
@@ -23,7 +24,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-
+                <sec:authorize access="hasRole('ADMIN')">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
@@ -33,6 +34,7 @@
                         <li><a href="">Show all</a></li>
                     </ul>
                 </li>
+                </sec:authorize>
 
 
                 <li class="dropdown">
@@ -51,8 +53,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-haspopup="true" aria-expanded="false">
-                        <sec:authentication property="principal.username"></sec:authentication>
-
+                        <sec:authentication property="principal.username"/>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">My account</a></li>

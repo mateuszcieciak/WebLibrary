@@ -61,13 +61,17 @@
         $('.delete-button').on('click', function (event) {
             event.preventDefault();
             var url = event.target.href;
-            $.post(url);
-            location.reload();
+            $.post(url, {
+                '${_csrf.parameterName}':'${_csrf.token}'
+            })
+                    .done(function(){
+                location.reload();
+            });
         });
     });
-
-
 </script>
+
+
 
 
 

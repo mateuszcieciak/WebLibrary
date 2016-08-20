@@ -32,7 +32,14 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException("User not found: " +email);
         }
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+
+        if(user.getRole()==User.Role.ADMIN){
+            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        }
+        else if(user.getRole()==User.Role.USER){
+            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+        }
+
 
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
