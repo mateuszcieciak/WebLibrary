@@ -49,6 +49,8 @@ public class RentController {
         User user = userService.findByEmail(principal.getName());
 
         Rent rent = new Rent(book, user);
+        book.setAvailable(book.getAvailable()-1);
+        bookService.save(book);
         rentService.save(rent);
 
         return "redirect:/rents";
