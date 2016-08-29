@@ -6,6 +6,7 @@
 <c:url value="/book/edit" var="editBookUrl"/>
 <c:url value="/book/delete" var="deleteBookUrl"/>
 <c:url value="/rent/book" var="rentBookUrl"/>
+<c:url value="/api/books" var="bookListJSON"/>
 
 <div class="container text-center">
 
@@ -64,7 +65,11 @@
         </div>
 
     </div>
-
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+            <a href="${bookListJSON}" class="btn btn-success">Generate JSON</a>
+        </div>
+    </div>
 </div>
 <script>
     $(function() {

@@ -3,6 +3,8 @@
 <%@include file="/WEB-INF/include/header.jsp" %>
 <%@include file="/WEB-INF/include/navbar.jsp" %>
 
+<c:url value="/api/users" var="userListJSON"/>
+
 <div class="container text-center">
 
     <h1>List of Users</h1>
@@ -35,7 +37,11 @@
             </table>
 
         </div>
-
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <a href="${userListJSON}" class="btn btn-success">Generate JSON</a>
+            </div>
+        </div>
     </div>
 
 </div>
