@@ -31,8 +31,8 @@
                 <label class="control-label col-sm-2" for="available">Available:</label>
                 <div class="col-sm-8">
                     <input value="${book.available}" name ="available" type="number" id="available"
-                           min="0" class="form-control"
-                           placeholder="Enter number of available books" autofocus>
+                           class="form-control"
+                           placeholder="Enter number of available books" min="0" autofocus>
                 </div>
             </div>
 

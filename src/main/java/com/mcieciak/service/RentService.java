@@ -9,4 +9,7 @@ public interface RentService {
     List<Rent> findByUser(User user);
 
     void save(Rent rent);
+
+    Rent findById(Long id);
+
 }

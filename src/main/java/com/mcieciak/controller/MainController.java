@@ -29,7 +29,8 @@ public class MainController {
 
     @Autowired
     UserService userService;
-    @RequestMapping(value="/register", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@ModelAttribute User user) {
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

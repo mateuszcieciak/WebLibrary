@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface RentRepository extends JpaRepository<Rent, Long>{
+public interface RentRepository extends JpaRepository<Rent, Long> {
 
     // Dzieki temu Query za pomocą jednego zapytania wyciagna sie Renty z uzytkownikami i ksiazkami
     // npdst zalogowanego uzytkownika

@@ -4,6 +4,7 @@
 <%@include file="/WEB-INF/include/navbar.jsp" %>
 
 <c:url value="/api/users" var="userListJSON"/>
+<c:url value="/user/delete" var="deleteUserUrl"/>
 
 <div class="container text-center">
 
@@ -20,6 +21,8 @@
                     <th class="text-center">First name</th>
                     <th class="text-center">Last name</th>
                     <th class="text-center">Email</th>
+                    <th class="text-center">Role</th>
+                    <th class="text-center col-md-1">Delete</th>
                 </tr>
                 </thead>
 
@@ -30,6 +33,10 @@
                         <td class="text-center">${user.firstName}</td>
                         <td class="text-center">${user.lastName}</td>
                         <td class="text-center">${user.email}</td>
+                        <td class="text-center">${user.role}</td>
+                        <td class="text-center">
+                            <a href="${deleteUserUrl}/${user.id}"
+                               class="btn btn-sm btn-danger delete-button">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -43,5 +50,15 @@
             </div>
         </div>
     </div>
-
 </div>
+<script>
+    $(function() {
+        $('.delete-button').on('click', function(event) {
+            console.log(event);
+            event.preventDefault();
+            var url = event.target.href;
+            $.post(url);
+            location.reload();
+        });
+    });
+</script>

@@ -42,7 +42,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
                 .addMappingForUrlPatterns(null, true, "/*");
 
         // Filtr do security
-        DelegatingFilterProxy delegatingFilterProxy=new DelegatingFilterProxy();
+        DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy();
         servletContext.addFilter("springSecurityFilterChain", delegatingFilterProxy)
                 .addMappingForUrlPatterns(null, true, "/*");
 

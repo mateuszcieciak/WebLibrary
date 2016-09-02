@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@PropertySource(value={"classpath:hibernate.properties"})
+@PropertySource(value = {"classpath:hibernate.properties"})
 @EnableJpaRepositories(basePackages = "com.mcieciak.dao")
 public class HibernateConfig {
 

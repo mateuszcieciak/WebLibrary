@@ -77,10 +77,8 @@
             console.log(event);
             event.preventDefault();
             var url = event.target.href;
-            $.post(url)
-                    .done(function() {
-                        location.reload();
-                    });
+            $.post(url);
+            location.reload();
         });
     });
 </script>

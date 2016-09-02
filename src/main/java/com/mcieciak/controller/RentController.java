@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -49,10 +50,23 @@ public class RentController {
         User user = userService.findByEmail(principal.getName());
 
         Rent rent = new Rent(book, user);
-        book.setAvailable(book.getAvailable()-1);
+        book.setAvailable(book.getAvailable() - 1);
         bookService.save(book);
         rentService.save(rent);
 
         return "redirect:/rents";
     }
+
+    @RequestMapping(value = "/rent/delete/{rentId}", method = RequestMethod.GET)
+    public String deleteRent(@PathVariable Long rentId, Principal principal) {
+
+        User user = userService.findByEmail(principal.getName());
+        Rent rent = rentService.findById(rentId);
+        rent.setReturnDate(new Date());
+        rentService.save(rent);
+
+        return "redirect:/rents";
+    }
+
+
 }

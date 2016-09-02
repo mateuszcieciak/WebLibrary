@@ -5,6 +5,7 @@ import com.mcieciak.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,5 +24,13 @@ public class UserController {
         model.addAttribute("userList", userList);
 
         return "users";
+    }
+
+    @RequestMapping(value="/user/delete/{id}", method = RequestMethod.POST)
+    public String deleteUser(@PathVariable Long id){
+
+        userService.delete(id);
+        return "redirect:/users";
+
     }
 }

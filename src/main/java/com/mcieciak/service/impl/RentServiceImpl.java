@@ -24,4 +24,10 @@ public class RentServiceImpl implements RentService {
     public void save(Rent rent) {
         rentRepository.save(rent);
     }
+
+    @Override
+    public Rent findById(Long id) {
+        return rentRepository.findOne(id);
+    }
+
 }

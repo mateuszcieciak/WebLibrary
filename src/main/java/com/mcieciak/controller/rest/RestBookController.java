@@ -18,8 +18,8 @@ public class RestBookController {
     @Autowired
     private BookService bookService;
 
-    @RequestMapping(value="/books", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Book> getBooks(){
+    @RequestMapping(value = "/books", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Book> getBooks() {
         List<Book> books = bookService.findAll();
         return books;
     }
